@@ -6,7 +6,7 @@ from wtforms.validators import DataRequired
 
 app = Flask(__name__)
 
-app.secret_key="Clave super bacan que nadie nunca detectara jajaxdxdxddddd"
+app.config["SECRET_KEY"] ="Clave super bacan que nadie nunca detectara jajaxdxdxddddd"
 
 class Formulario(FlaskForm):
     nem = IntegerField(label="NEM",validators=[DataRequired("Es necesario ingresar el NEM")])
@@ -17,7 +17,7 @@ class Formulario(FlaskForm):
     historia = IntegerField(label="Historia")
     submit = SubmitField(label="Enviar")
 
-@app.route("/",methods=["get","post"])
+@app.route("/",methods=['post'])
 def principal():
     formulario = Formulario()
     if formulario.validate_on_submit():
@@ -29,11 +29,11 @@ def principal():
         historia = int(formulario.historia)
         p1 = Postulante(lenguaje,matematica,ciencia,historia,nem,ranking)
         return redirect(url_for("carreras",postulante = p1))
-    render_template("index.html",formulario = formulario)
+    return render_template("index.html",formulario = formulario)
 
 @app.route("/carreras")
 def carreras(postulante:Postulante):
-    pass
+    return render_template("carreras.html")
 
 if __name__=="__main__":
     app.run(debug=True)
