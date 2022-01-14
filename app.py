@@ -1,3 +1,4 @@
+from logica import Carrera,Postulante
 from flask import Flask, render_template, redirect, url_for
 from flask_wtf import FlaskForm
 from wtforms import IntegerField,SubmitField
@@ -19,10 +20,19 @@ class Formulario(FlaskForm):
 @app.route("/",methods=["get","post"])
 def principal():
     formulario = Formulario()
+    if formulario.validate_on_submit():
+        nem = int(formulario.nem)
+        ranking = int(formulario.ranking)
+        lenguaje = int(formulario.lenguaje)
+        matematica = int(formulario.matematica)
+        ciencia = int(formulario.ciencia)
+        historia = int(formulario.historia)
+        p1 = Postulante(lenguaje,matematica,ciencia,historia,nem,ranking)
+        return redirect(url_for("carreras",postulante = p1))
     render_template("index.html",formulario = formulario)
 
 @app.route("/carreras")
-def carreras():
+def carreras(postulante:Postulante):
     pass
 
 if __name__=="__main__":
