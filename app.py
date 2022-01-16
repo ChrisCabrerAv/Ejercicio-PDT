@@ -1,5 +1,5 @@
 from logica import Carrera,Postulante
-from flask import Flask, render_template, redirect, url_for
+from flask import Flask, render_template, redirect, url_for, session
 from flask_wtf import FlaskForm
 from wtforms import IntegerField,SubmitField
 from wtforms.validators import DataRequired
@@ -27,12 +27,12 @@ def principal():
         matematica = int(formulario.matematica)
         ciencia = int(formulario.ciencia)
         historia = int(formulario.historia)
-        p1 = Postulante(lenguaje,matematica,ciencia,historia,nem,ranking)
-        return redirect(url_for("carreras",postulante = p1))
+        session['postulante'] = Postulante(lenguaje,matematica,ciencia,historia,nem,ranking)
+        return redirect(url_for("carreras"))
     return render_template("index.html",formulario = formulario)
 
 @app.route("/carreras")
-def carreras(postulante:Postulante):
+def carreras():
     return render_template("carreras.html")
 
 if __name__=="__main__":
