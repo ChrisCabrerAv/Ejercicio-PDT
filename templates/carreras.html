@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Ejercicio PDT</title>
-</head>
-<body>
-    <h1>Ejercicio PDT</h1>
+{% extends "base.html" %}
+
+{% block contenido %}
     <h2>Resultados</h2>
     <table>
         <tr>
+            <th>Carrera</th>
             <th>NEM</th>
             <th>Ranking</th>
             <th>Lenguaje</th>
@@ -17,7 +14,19 @@
             <th>Último Seleccionado</th>
             <th>Puntaje Obtenido</th>
         </tr>
+        {% for i in range %}
+        <tr>
+            <th>{{datos[i].get_nombre()}}</th>
+            <th>{{datos[i].get_nem()}}</th>
+            <th>{{datos[i].get_ranking()}}</th>
+            <th>{{datos[i].get_lenguaje()}}</th>
+            <th>{{datos[i].get_matematicas()}}</th>
+            <th>{{datos[i].get_historia()}}</th>
+            <th>{{datos[i].get_ciencias()}}</th>
+            <th>{{datos[i].get_puntaje_ultimo()}}</th>
+            <th>{{resultados[i]}}</th>
+        </tr>
+        {% endfor %}
         
     </table>
-</body>
-</html>
+{% endblock %}

@@ -52,11 +52,11 @@ class Carrera(Datos):
         return str(self.puntaje_ultimo)
 
     def _calcular(self,nem,ranking,p_len,p_mat,p_cie,p_his):
-        puntaje = (nem*self.nem // 100) + (ranking*self.ranking // 100) + (p_len*self.lenguaje // 100) + (p_mat*self.matematicas //100) + (p_cie*self.ciencias//100)+(p_his*self.historia//100)
+        puntaje = ((nem*self.nem)+(ranking*self.ranking)+(p_len*self.lenguaje)+(p_mat*self.matematicas)+(p_cie*self.ciencias)+(p_his*self.historia))/100
         return puntaje
     
     def calcular(self, postulante:Postulante):
-        return str(self._calcular(postulante.nem,postulante.ranking,postulante.lenguaje,postulante.matematicas,postulante.ciencias,postulante.historia))
+        return str(self._calcular(postulante.nem,postulante.ranking,postulante.lenguaje,postulante.matematicas,postulante.ciencias,postulante.historia))[0:5]
 
     def __repr__(self) -> str:
         return "Carrera: {0}\nPonderaciones: Lenguaje = {1}, Matemáticas = {2}, Ciencias = {3}, Historia = {4}".format(self.nombre, self.lenguaje,self.matematicas,self.ciencias,self.historia)

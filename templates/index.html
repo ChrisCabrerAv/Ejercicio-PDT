@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Ejercicio PDT</title>
-</head>
-<body>
-    <h1>Ejercicio PDT</h1>
+{% extends "base.html" %}
+
+{% block contenido %}
+    <div class="container">
     <h2>Apartado del postulante</h2>
     <form method="post">
         {{formulario.hidden_tag()}}
@@ -16,5 +13,5 @@
         {{formulario.ranking.label}}{{formulario.ranking}} <br>
         {{formulario.submit}}
     </form>
-</body>
-</html>
+    </div>
+{% endblock %}
