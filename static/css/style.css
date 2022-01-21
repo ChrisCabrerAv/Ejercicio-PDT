@@ -7,30 +7,29 @@ h1{
     text-align: center;
 }
 .container{
+    margin: 0 auto;
     background-color: #2A2F33;
     color: white;
-    text-align: center;
-    padding: 1.5rem;
-    font-size: 1.5rem;
-    
+    text-align: center;    
 }
+
+.container form{
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+
 .container form input{
-    display: inline-block;
     text-align: center;
     background-color: #2A2F33;
     margin-bottom: 15px;
     width: 40%;
-    padding: 10px;
+    margin:3px 1rem;
     box-sizing: border-box;
     border: none;
     border-radius: 12px;
     color: white;
-    resize: none;
-    font-size: 1rem;
-}
-.container form input:focus{
-    border: #fff;
-    border-style: none none solid none;
+    padding: .5rem;
+    font-size: 1.5rem;
 }
 #submit{
     display: inline-block;
@@ -41,4 +40,23 @@ h1{
 }
 #submit:hover{
 	background-color: #046193;
+}
+
+table{
+    margin: 0 auto;
+    color: whitesmoke;
+    border-collapse: collapse;
+    overflow: hidden;
+}
+
+table th{
+    background-color: #2A2F33;
+    padding: 10px;
+    text-align: center;
+}
+
+table td{
+    background-color: gray;
+    padding: 10px;
+    text-align: center;
 }

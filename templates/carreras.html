@@ -16,15 +16,15 @@
         </tr>
         {% for i in range %}
         <tr>
-            <th>{{datos[i].get_nombre()}}</th>
-            <th>{{datos[i].get_nem()}}</th>
-            <th>{{datos[i].get_ranking()}}</th>
-            <th>{{datos[i].get_lenguaje()}}</th>
-            <th>{{datos[i].get_matematicas()}}</th>
-            <th>{{datos[i].get_historia()}}</th>
-            <th>{{datos[i].get_ciencias()}}</th>
-            <th>{{datos[i].get_puntaje_ultimo()}}</th>
-            <th>{{resultados[i]}}</th>
+            <td>{{datos[i].get_nombre()}}</td>
+            <td>{{datos[i].get_nem()}}</td>
+            <td>{{datos[i].get_ranking()}}</td>
+            <td>{{datos[i].get_lenguaje()}}</td>
+            <td>{{datos[i].get_matematicas()}}</td>
+            <td>{{datos[i].get_historia()}}</td>
+            <td>{{datos[i].get_ciencias()}}</td>
+            <td>{{datos[i].get_puntaje_ultimo()}}</td>
+            <td>{{resultados[i]}}</td>
         </tr>
         {% endfor %}
         

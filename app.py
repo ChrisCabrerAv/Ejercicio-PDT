@@ -18,8 +18,11 @@ class Formulario(FlaskForm):
     submit = SubmitField(label="Enviar")
 
 datos = [
+    Carrera('Medicina',10,25,15,0,755.15,25,25),
     Carrera('Ingeniería Civil Informática',10,20,20,0,580,25,25),
     Carrera('Derecho',25,10,0,15,600,25,25),
+    Carrera('Odontología',10,25,15,0,700.7,25,25),
+    Carrera('Kinesiología',10,25,15,0,590.85,25,25)
 ]
 
 @app.route("/",methods=['get','post'])
